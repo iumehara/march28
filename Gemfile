@@ -2,9 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'pg'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '2.1'
 
 group :development, :test do
 	gem 'rspec-rails', '2.11.0'
+  gem 'guard-rspec', '1.2.1'
+  gem 'guard-spork', '1.4.2'
+  gem 'spork', '0.9.2'
 end
 
 group :assets do
@@ -13,8 +18,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 group :test do
 	gem 'capybara', '1.1.2'
+	gem 'rb-fsevent', '0.9.1', :require => false
+	gem 'growl', '1.0.3'
 end
+
