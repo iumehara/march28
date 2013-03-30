@@ -22,5 +22,13 @@ module SessionsHelper
     redirect_to(session[:return_to] || default)
     session.delete(:return_to)
   end
+
+  def signed_in_user
+    unless !current_user.nil?
+      # didn't define as store_location definition in sessions helper
+      session[:return_to] = request.url
+      redirect_to signin_url, notice: "Please sign in."
+    end
+  end
   
 end
